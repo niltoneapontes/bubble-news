@@ -6,6 +6,7 @@ export default {
       lightGray: "#EBEBF2",
       gray: "#D5D5D5",
       black: "#0F0F0F",
+      transparent: "transparent",
     },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
@@ -13,7 +14,10 @@ export default {
     },
     extend: {
       borderRadius: {
-        md: "0.75rem",
+        md: "0.5rem",
+      },
+      borderWidth: {
+        1: "1px",
       },
     },
   },
