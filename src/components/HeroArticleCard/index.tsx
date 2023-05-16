@@ -12,7 +12,7 @@ export default function HeroArticleCard({ article }: IHeroArticle) {
       className="col-span-2 flex flex-col bg-transparent justify-between w-full overflow-hidden mb-8 relative"
     >
       <img className="w-full" src={article.urlToImage}></img>
-      <div className="absolute bottom-0 pt-16 bg-gradient-to-t from-black via-75% to-transparent">
+      <div className="absolute bottom-0 pt-12 bg-gradient-to-t from-black via-75% to-transparent">
         <div className="flex flex-col p-4">
           <h1 className="text-lightGray font-serif font-bold text-2xl">
             {article.title}

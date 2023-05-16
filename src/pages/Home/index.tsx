@@ -5,6 +5,7 @@ import { Article } from "../../model/Article";
 import ArticleCard from "../../components/ArticleCard";
 import RandomImage from "../../components/RandomImage";
 import HeroArticleCard from "../../components/HeroArticleCard";
+import { isMobile } from "react-device-detect";
 
 export default function Home() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -33,9 +34,11 @@ export default function Home() {
   return (
     <div className="flex-col items-start justify-center bg-black w-screen min-h-screen">
       <Header setArticles={setArticles} setHeroArticle={setHeroArticle} />
-      {heroArticle && <HeroArticleCard article={heroArticle}></HeroArticleCard>}
+      {heroArticle && !isMobile && (
+        <HeroArticleCard article={heroArticle}></HeroArticleCard>
+      )}
       <div className="p-8">
-        <div className="grid grid-cols-2 grid-flow-row gap-3 mt-10 mb-8 ">
+        <div className="grid grid-cols-2 grid-flow-row gap-3 mt-8 mb-8 ">
           {articles.length > 0 &&
             articles.map((article: Article) => (
               <ArticleCard article={article}></ArticleCard>
